@@ -77,7 +77,7 @@ class WeatherView: UIView {
 		button.setImage(image, for: .normal)
 		button.tintColor = .white
 		button.contentMode = .scaleAspectFit
-		button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 00, bottom: 0, right: 0)
+//		button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 00, bottom: 0, right: 0)
 		return button
 	}()
 	
