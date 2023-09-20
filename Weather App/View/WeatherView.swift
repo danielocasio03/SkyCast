@@ -13,14 +13,14 @@ class WeatherView: UIView {
 	
 	
 //MARK: - General UI Declaration
-	let backgroundImage: UIImageView = {
+	lazy var backgroundImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFill
 		return image
 	}()
 	
-	let searchButton: UIButton = {
+	lazy var searchButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
@@ -29,7 +29,7 @@ class WeatherView: UIView {
 		
 	}()
 	
-	let searchField: UITextField = {
+	lazy var searchField: UITextField = {
 		let textField = UITextField()
 		let padding = UIView()
 		padding.frame = CGRect(x: 0, y: 0, width: 12, height: 0)
@@ -41,7 +41,7 @@ class WeatherView: UIView {
 		return textField
 	}()
 	
-	let cityTempLabel: UILabel = {
+	lazy var cityTempLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = .white
@@ -51,7 +51,7 @@ class WeatherView: UIView {
 		return label
 	}()
 	
-	let weatherCondition: UILabel = {
+	lazy var weatherCondition: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Roboto-Light", size: 20)
@@ -61,7 +61,7 @@ class WeatherView: UIView {
 		return label
 	}()
 	
-	let greetingLabel: UILabel = {
+	lazy var greetingLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Roboto-Light", size: 18)
@@ -70,22 +70,22 @@ class WeatherView: UIView {
 		return label
 	}()
 	
-	let locationButton: UIButton = {
+	lazy var locationButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
 		let image = UIImage(systemName: "location.circle.fill")?.withRenderingMode(.alwaysTemplate)
 		button.setImage(image, for: .normal)
 		button.tintColor = .white
 		button.contentMode = .scaleAspectFit
-//		button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 00, bottom: 0, right: 0)
+		button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 00, bottom: 0, right: 0)
 		return button
 	}()
 	
 	
 //MARK: - StackView Declaration
-	let hourlyWeatherView = HourlyWeatherView()
+	lazy var hourlyWeatherView = HourlyWeatherView()
 	
-	let hourlyWeatherStack: UIStackView = {
+	lazy var hourlyWeatherStack: UIStackView = {
 		let stack = UIStackView()
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.distribution = .equalSpacing
@@ -97,16 +97,16 @@ class WeatherView: UIView {
 	
 //MARK: - Declaration of Weather Bubbles
 	//First Weather Bubble
-	let highLowBubble = MiscWeatherView()
+	lazy var highLowBubble = MiscWeatherView()
 	
-	let highLowHLabel: UILabel = {
+	lazy var highLowHLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)
 		label.text = "H:"
 		return label
 	}()
-	let highLowLLabel: UILabel = {
+	lazy var highLowLLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)
@@ -115,9 +115,9 @@ class WeatherView: UIView {
 	}()
 	
 	//Second Weather Bubble
-	let riseAndSetBubble = MiscWeatherView()
+	lazy var riseAndSetBubble = MiscWeatherView()
 	
-	let sunriseImage: UIImageView = {
+	lazy var sunriseImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFit
@@ -125,7 +125,7 @@ class WeatherView: UIView {
 		return image
 	}()
 	
-	let sunsetImage: UIImageView = {
+	lazy var sunsetImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFit
@@ -134,7 +134,7 @@ class WeatherView: UIView {
 	}()
 	
 	//Third Weather Bubble
-	let windSpeedBubble = MiscWeatherView()
+	lazy var windSpeedBubble = MiscWeatherView()
 	
 	
 //MARK: - Start of executed code
@@ -194,9 +194,7 @@ class WeatherView: UIView {
 			greetingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 			//Location Button
 			locationButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 170),
-			locationButton.topAnchor.constraint(equalTo: topAnchor, constant: 101),
-			locationButton.widthAnchor.constraint(equalToConstant: 100),
-			locationButton.heightAnchor.constraint(equalToConstant: 100)
+			locationButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
 		])
 	}
 	

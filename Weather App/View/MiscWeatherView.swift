@@ -10,9 +10,9 @@ import UIKit
 
 class MiscWeatherView: UIView {
 	
-	let colorManager = ViewDesignManager()
+	lazy var colorManager = ViewDesignManager()
 	
-	let boxIcon: UIImageView = {
+	lazy var boxIcon: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFit
@@ -20,7 +20,7 @@ class MiscWeatherView: UIView {
 		return image
 	}()
 	
-	let boxTitle: UILabel = {
+	lazy var boxTitle: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)
@@ -28,14 +28,14 @@ class MiscWeatherView: UIView {
 		return label
 	}()
 	
-	let boxDetailOne: UILabel = {
+	lazy var boxDetailOne: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)
 		return label
 	}()
 	
-	let boxDetailTwo: UILabel = {
+	lazy var boxDetailTwo: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)

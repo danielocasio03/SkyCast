@@ -11,7 +11,7 @@ import UIKit
 class HourlyWeatherView: UIView {
 	let colorManager = ViewDesignManager()
 	
-	let timeLabel: UILabel = {
+	lazy var timeLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 10)
@@ -19,7 +19,7 @@ class HourlyWeatherView: UIView {
 		return label
 	}()
 	
-	let weatherIcon: UIImageView = {
+	lazy var weatherIcon: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFit
@@ -27,7 +27,7 @@ class HourlyWeatherView: UIView {
 		return image
 	}()
 	
-	let temperatureLabel: UILabel = {
+	lazy var temperatureLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 14)
@@ -35,7 +35,7 @@ class HourlyWeatherView: UIView {
 		return label
 	}()
 	
-	let rainlabel: UILabel = {
+	lazy var rainlabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont(name: "Arial", size: 8)

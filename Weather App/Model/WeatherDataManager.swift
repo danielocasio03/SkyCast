@@ -31,21 +31,13 @@ class WeatherDataManager {
 		 cancellable = URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
 			.map(\.data)
 			.decode(type: WeatherDataModel.self, decoder: JSONDecoder())
+			//Once the fetch is completed it then passes it over to the VC
 			.sink(receiveCompletion: {completion in
 				print("Network request status returned: \(completion)")}
-				  , receiveValue: {data in
-				manageWeather(weatherData: data)
-			
+				  , receiveValue: { [weak self] data in
+				guard let self else {return}
+				self.passWeather?(data)
 			})
 		
-		//function called at the end of fetch weather when
-		//The fetch has concluded, passing the fetched data here.
-		//This function then prints and handles passing the weather to VC
-		func manageWeather(weatherData: WeatherDataModel) {
-			print(weatherData)
-			
-			passWeather!(weatherData)
-			
-		}
 	}
 }
