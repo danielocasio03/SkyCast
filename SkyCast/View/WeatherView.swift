@@ -194,7 +194,7 @@ class WeatherView: UIView {
 			greetingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 			//Location Button
 			locationButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 170),
-			locationButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
+			locationButton.topAnchor.constraint(equalTo: searchField.safeAreaLayoutGuide.bottomAnchor, constant: 6),
 		])
 	}
 	
@@ -246,38 +246,38 @@ class WeatherView: UIView {
 		NSLayoutConstraint.activate([
 			//Weather Stack
 			hourlyWeatherStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-			hourlyWeatherStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-			hourlyWeatherStack.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 260),
+			hourlyWeatherStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+			hourlyWeatherStack.bottomAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.topAnchor, constant: -7),
 			hourlyWeatherStack.heightAnchor.constraint(equalToConstant: 112),
 			
 			
 			//Misc Weather Bubble One
-			highLowBubble.topAnchor.constraint(equalTo: hourlyWeatherStack.bottomAnchor, constant: 7),
-			highLowBubble.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+			highLowBubble.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+			highLowBubble.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
 				//Box Icon
 			highLowBubble.boxIcon.widthAnchor.constraint(equalToConstant: 9),
-			highLowBubble.boxIcon.topAnchor.constraint(equalTo: highLowBubble.topAnchor, constant: 3),
-			highLowBubble.boxIcon.leadingAnchor.constraint(equalTo: highLowBubble.leadingAnchor, constant: 10),
+			highLowBubble.boxIcon.topAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.topAnchor, constant: 3),
+			highLowBubble.boxIcon.leadingAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.leadingAnchor, constant: 10),
 				//Box Title
-			highLowBubble.boxTitle.centerYAnchor.constraint(equalTo: highLowBubble.boxIcon.centerYAnchor, constant: -1),
-			highLowBubble.boxTitle.leadingAnchor.constraint(equalTo: highLowBubble.boxIcon.trailingAnchor, constant: 4),
+			highLowBubble.boxTitle.centerYAnchor.constraint(equalTo: highLowBubble.boxIcon.safeAreaLayoutGuide.centerYAnchor, constant: -1),
+			highLowBubble.boxTitle.leadingAnchor.constraint(equalTo: highLowBubble.boxIcon.safeAreaLayoutGuide.trailingAnchor, constant: 4),
 				//Box Detail One
-			highLowBubble.boxDetailOne.topAnchor.constraint(equalTo: highLowBubble.boxTitle.bottomAnchor, constant: 5),
-			highLowBubble.boxDetailOne.leadingAnchor.constraint(equalTo: highLowBubble.leadingAnchor, constant: 28),
+			highLowBubble.boxDetailOne.topAnchor.constraint(equalTo: highLowBubble.boxTitle.safeAreaLayoutGuide.bottomAnchor, constant: 5),
+			highLowBubble.boxDetailOne.leadingAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.leadingAnchor, constant: 28),
 				//Box Detail Two
-			highLowBubble.boxDetailTwo.topAnchor.constraint(equalTo: highLowBubble.boxDetailOne.bottomAnchor, constant: 3),
-			highLowBubble.boxDetailTwo.leadingAnchor.constraint(equalTo: highLowBubble.boxDetailOne.leadingAnchor),
+			highLowBubble.boxDetailTwo.topAnchor.constraint(equalTo: highLowBubble.boxDetailOne.safeAreaLayoutGuide.bottomAnchor, constant: 3),
+			highLowBubble.boxDetailTwo.leadingAnchor.constraint(equalTo: highLowBubble.boxDetailOne.safeAreaLayoutGuide.leadingAnchor),
 				//H Label
-			highLowHLabel.topAnchor.constraint(equalTo: highLowBubble.boxTitle.bottomAnchor, constant: 5),
-			highLowHLabel.leadingAnchor.constraint(equalTo: highLowBubble.leadingAnchor, constant: 15),
+			highLowHLabel.topAnchor.constraint(equalTo: highLowBubble.boxTitle.safeAreaLayoutGuide.bottomAnchor, constant: 5),
+			highLowHLabel.leadingAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.leadingAnchor, constant: 15),
 				//L Label
-			highLowLLabel.topAnchor.constraint(equalTo: highLowHLabel.bottomAnchor, constant: 2),
-			highLowLLabel.leadingAnchor.constraint(equalTo: highLowHLabel.leadingAnchor),
+			highLowLLabel.topAnchor.constraint(equalTo: highLowHLabel.safeAreaLayoutGuide.bottomAnchor, constant: 2),
+			highLowLLabel.leadingAnchor.constraint(equalTo: highLowHLabel.safeAreaLayoutGuide.leadingAnchor),
 			
 			
 			//Misc Weather Bubble Two
-			riseAndSetBubble.centerYAnchor.constraint(equalTo: highLowBubble.centerYAnchor),
-			riseAndSetBubble.leadingAnchor.constraint(equalTo: highLowBubble.trailingAnchor, constant: 5),
+			riseAndSetBubble.centerYAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.centerYAnchor),
+			riseAndSetBubble.leadingAnchor.constraint(equalTo: highLowBubble.safeAreaLayoutGuide.trailingAnchor, constant: 5),
 				//Box Icon
 			riseAndSetBubble.boxIcon.widthAnchor.constraint(equalToConstant: 15),
 			riseAndSetBubble.boxIcon.topAnchor.constraint(equalTo: riseAndSetBubble.topAnchor, constant: 2),
@@ -318,9 +318,6 @@ class WeatherView: UIView {
 			//Box Detail Two
 			windSpeedBubble.boxDetailTwo.topAnchor.constraint(equalTo: windSpeedBubble.boxDetailOne.bottomAnchor, constant: 3),
 			windSpeedBubble.boxDetailTwo.leadingAnchor.constraint(equalTo: windSpeedBubble.boxDetailOne.leadingAnchor),
-
-			
-			
 
 			
 		])

@@ -23,7 +23,7 @@ class HourlyWeatherView: UIView {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleAspectFit
-		image.image = UIImage(named: "thunder-rain" )
+//		image.image = UIImage(named: "thunder-rain" )
 		return image
 	}()
 	
