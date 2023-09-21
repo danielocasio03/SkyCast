@@ -1,6 +1,6 @@
 //
 //  hourlyWeatherView.swift
-//  Weather App
+//  Sky Cast
 //
 //  Created by Daniel Efrain Ocasio on 8/28/23.
 //
